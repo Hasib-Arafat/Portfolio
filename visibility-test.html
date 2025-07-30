@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltip Visibility Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            min-height: 100vh;
+        }
+        
+        .test-tooltip {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            width: 320px;
+            height: auto;
+            max-height: 400px;
+            transform: translateY(-50%);
+            background: rgba(26, 32, 44, 0.98);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 2px solid #09ff75;
+            box-shadow: -20px 0 60px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(20px);
+            opacity: 1;
+            visibility: visible;
+            z-index: 10000;
+            pointer-events: auto;
+            overflow-y: auto;
+        }
+
+        .tooltip-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(9, 255, 117, 0.3);
+            color: #09ff75;
+            font-weight: 600;
+        }
+
+        .detection-detail {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .detection-detail .label {
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+        }
+
+        .detection-detail .value {
+            color: #09ff75;
+            font-weight: 600;
+        }
+        
+        .info {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="info">
+        <h2>Tooltip Visibility Test</h2>
+        <p>This test shows the tooltip in a fixed position on the right side without any hover dependency.</p>
+        <p>If you can see the tooltip on the right side of the screen, then the CSS is working correctly.</p>
+    </div>
+    
+    <div class="test-tooltip">
+        <div class="tooltip-header">
+            <i class="fas fa-id-card">📋</i>
+            <span>Personal Information</span>
+        </div>
+        <div class="tooltip-content">
+            <div class="detection-detail">
+                <span class="label">Name:</span>
+                <span class="value">Al Hasib Arafat</span>
+            </div>
+            <div class="detection-detail">
+                <span class="label">Education:</span>
+                <span class="value">Daffodil International University</span>
+            </div>
+            <div class="detection-detail">
+                <span class="label">DoB:</span>
+                <span class="value">Feb 02</span>
+            </div>
+            <div class="detection-detail">
+                <span class="label">Nationality:</span>
+                <span class="value">Bangladeshi</span>
+            </div>
+            <div class="detection-detail">
+                <span class="label">Location:</span>
+                <span class="value">Bangladesh</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

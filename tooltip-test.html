@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltip Test</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 50px;
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .test-container {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background: #ddd;
+            margin: 50px auto;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .detection-box {
+            position: relative;
+            width: 250px;
+            height: 275px;
+            border: 4px solid #09ff75;
+            border-radius: 8px;
+            background: rgba(9, 255, 117, 0.05);
+            cursor: pointer;
+            transform: scale(1);
+            box-shadow: 0 0 20px rgba(9, 255, 117, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #09ff75;
+            font-weight: bold;
+        }
+        
+        .detection-box:hover {
+            background: rgba(9, 255, 117, 0.1);
+            box-shadow: 0 0 30px rgba(9, 255, 117, 0.6);
+            border-color: #40ff88;
+        }
+        
+        .detection-tooltip {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px) scale(0.9);
+            background: rgba(26, 32, 44, 0.96);
+            color: white;
+            padding: 1.2rem;
+            border-radius: 15px;
+            border: 2px solid #09ff75;
+            min-width: 320px;
+            max-width: 400px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(15px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 9999;
+            margin-top: 15px;
+            pointer-events: none;
+        }
+        
+        .detection-box:hover .detection-tooltip {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateX(-50%) translateY(0) scale(1) !important;
+            border-color: #40ff88;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(9, 255, 117, 0.4);
+            pointer-events: auto;
+        }
+        
+        .tooltip-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(9, 255, 117, 0.3);
+            color: #09ff75;
+            font-weight: 600;
+        }
+        
+        .detection-detail {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+        }
+        
+        .detection-detail .label {
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+        }
+        
+        .detection-detail .value {
+            color: #09ff75;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <h1>Face Detection Tooltip Test</h1>
+    <p>Hover over the green detection box to see the tooltip:</p>
+    
+    <div class="test-container">
+        <div class="detection-box">
+            HOVER ME
+            
+            <div class="detection-tooltip">
+                <div class="tooltip-header">
+                    <i class="fas fa-user-check"></i>
+                    <span>Profile Recognition</span>
+                </div>
+                <div class="tooltip-content">
+                    <div class="detection-detail">
+                        <span class="label">Identity:</span>
+                        <span class="value">Al Hasib Arafat</span>
+                    </div>
+                    <div class="detection-detail">
+                        <span class="label">Role:</span>
+                        <span class="value">Robotics Engineer</span>
+                    </div>
+                    <div class="detection-detail">
+                        <span class="label">Specialization:</span>
+                        <span class="value">ROS & Autonomous Systems</span>
+                    </div>
+                    <div class="detection-detail">
+                        <span class="label">Education:</span>
+                        <span class="value">Computer Science Student</span>
+                    </div>
+                    <div class="detection-detail">
+                        <span class="label">Skills:</span>
+                        <span class="value">Python, C++, ROS2, Gazebo</span>
+                    </div>
+                    <div class="detection-detail">
+                        <span class="label">Experience:</span>
+                        <span class="value">3+ Years in Robotics</span>
+                    </div>
+                    <div class="detection-detail">
+                        <span class="label">Location:</span>
+                        <span class="value">Bangladesh</span>
+                    </div>
+                    <div class="detection-detail">
+                        <span class="label">Confidence:</span>
+                        <span class="value">98.7%</span>
+                    </div>
+                    <div class="detection-detail">
+                        <span class="label">Last Scan:</span>
+                        <span class="value">July 29, 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
