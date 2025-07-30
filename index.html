@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Al Hasib Arafat - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -74,6 +76,12 @@
                         </a>
                         <a href="https://bd.linkedin.com/in/hasibarafat" class="social-link" title="LinkedIn">
                             <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.facebook.com/al.hasib.9279/" class="social-link" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://discord.com/users/captainjr.8181" class="social-link" target="_blank" title="Discord">
+                            <i class="fab fa-discord"></i>
                         </a>
                     </div>
                 </div>
@@ -1043,6 +1051,7 @@
                 <div class="contact-info">
                     <h3>Let's Connect</h3>
                     <p>I'm always open to discussing new opportunities, collaborations, or just having a chat about technology!</p>
+                    <a href="Hasib's CV.pdf" download class="btn btn-primary dance" style="margin-bottom: 16px; display: inline-block;">Download My CV</a>
                     <div class="contact-items">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
@@ -1067,24 +1076,30 @@
                         <a href="https://www.linkedin.com/in/hasibarafat/" class="social-link">
                             <i class="fab fa-linkedin"></i>
                         </a>
+                        <a href="https://www.facebook.com/al.hasib.9279/" class="social-link" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://discord.com/users/captainjr.8181" class="social-link" target="_blank">
+                            <i class="fab fa-discord"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
+<form id="contact-form">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                            </div>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
                 </div>
             </div>
         </div>
@@ -1127,5 +1142,20 @@
     </div>
 
     <script src="script.js"></script>
+<script>
+// Initialize EmailJS with your public key
+emailjs.init('K4Ab1oVdG4TRF2bLn');
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    emailjs.sendForm('service_t8oowtb', 'template_venfhjq', this)
+        .then(function() {
+            alert('Message sent successfully!');
+            document.getElementById('contact-form').reset();
+        }, function(error) {
+            alert('Failed to send message. Please try again later.');
+        });
+});
+</script>
 </body>
 </html>
