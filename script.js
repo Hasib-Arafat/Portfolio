@@ -499,58 +499,53 @@ function initSmoothScrolling() {
 // Project Modal Functionality
 const projectData = {
     1: {
-        title: "E-Commerce Platform",
-        description: "A comprehensive full-stack e-commerce solution built with modern web technologies. Features include user authentication, product catalog, shopping cart, payment integration, and admin dashboard.",
-        technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Stripe API", "JWT Authentication"],
+        title: "Ranger BOT v2",
+        description: "Designed for emergency and search-and-rescue operations, Ranger BOT 2.0 is equipped with sensor modules for obstacle detection and a wireless camera for remote surveillance. The robot can be controlled manually using a joystick or remote controller and can adapt to hazardous terrain. Ideal for academic robotics and disaster tech.",
+        technologies: ["SBC(Raspberry Pi 4)", "FC(Pixhawk 2.4.8)", "Sensors", "Camera Module", "C++", "Python","Water pump","DC Motors","Tank Mechanism Wheels"],
         features: [
-            "User registration and authentication",
-            "Product browsing and search functionality",
-            "Shopping cart and wishlist",
-            "Secure payment processing with Stripe",
-            "Order tracking and history",
-            "Admin panel for product and order management",
-            "Responsive design for all devices",
-            "Email notifications"
+            "Obstacle detection using Camera Module, openCV and ultrasonic sensors",
+            "Wireless live video streaming",
+            "Remote-controlled mobility",
+            "Rugged chassis and tank mechanismed wheels for tough environments",
+            "Battery-powered for field use",
+            "Water pump system for firefighting rescue",
+            "lightweight and portable design for easy transport",
+            "4km range remote control",
+            "Supports various sensor modules for extended functionality"
         ],
-        github: "https://github.com/alhasibarafat/ecommerce-platform",
-        demo: "https://ecommerce-demo.alhasibarafat.com",
-        image: "https://via.placeholder.com/600x300/4299e1/ffffff?text=E-Commerce+Platform"
+        github: "https://github.com/Hasib-Arafat",
+        demo: "https://github.com/Hasib-Arafat",
+        image: "Ranger BOT V2.jpeg"
     },
     2: {
-        title: "Task Management Mobile App",
-        description: "A cross-platform mobile application for productivity and task management. Built with Flutter for seamless performance on both Android and iOS platforms.",
-        technologies: ["Flutter", "Dart", "Firebase", "Provider", "Local Notifications"],
+        title: "AI-Based Parking Detection",
+        description: "This computer vision-based project detects parking occupancy using OpenCV. A top-view camera continuously monitors a parking area, identifies vehicles, and determines free spots. Ideal for smart city and IoT projects, this system can be extended to generate live data, integrate sensors, and display availability in real-time.",
+        technologies: ["Python", "OpenCV", "NumPy", "Orange Pi" ,"Raspberry Pi"],
         features: [
-            "Create, edit, and delete tasks",
-            "Set reminders and notifications",
-            "Categorize tasks with labels and priorities",
-            "Dark and light theme support",
-            "Cloud synchronization with Firebase",
-            "Offline functionality",
-            "Progress tracking and statistics",
-            "Export tasks to PDF"
+            "Video-based detection of cars in parking spots",
+            "Real-time analysis and updates",
+            "Visual indication of available/occupied slots",
+            "Compatible with Orange Pi for live deployment",
+            "Lightweight code for easy integration"
         ],
-        github: "https://github.com/alhasibarafat/task-manager-app",
-        demo: "https://play.google.com/store/apps/details?id=com.alhasibarafat.taskmanager",
-        image: "https://via.placeholder.com/600x300/10b981/ffffff?text=Task+Manager+App"
+        github: "https://github.com/Hasib-Arafat/Car-Parking-Detection",
+        demo: "https://github.com/Hasib-Arafat/Car-Parking-Detection",
+        image: "Car Detection.jpeg"
     },
     3: {
-        title: "Predictive Analytics System",
-        description: "A machine learning-powered system for data prediction and analysis. Utilizes various ML algorithms to provide insights and forecasting capabilities.",
-        technologies: ["Python", "TensorFlow", "Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Flask"],
+        title: "Autonomous Drone Navigation System",
+        description: "This drone system integrates the power of the Raspberry Pi 4 and Pixhawk 2.4.8 flight controller to perform real-time aerial surveillance and mapping. Designed for search-and-rescue or monitoring applications, the drone captures live video, processes sensor data, and can follow basic autonomous navigation paths. The Raspberry Pi handles onboard data processing while the Pixhawk manages flight control. This system can be used for smart farming, disaster zones, or industrial inspections.",
+        technologies: ["Raspberry Pi 4", "Ultrasonic ", "Barometer ", "IMU ", "Scikit-USB/CSI camera for video input","Python", "C++ (for flight control & data processing)", "AT10 Radio Transmitter-Receiver", "Pixhawk 2.4.8 Flight Controller", "GPS Module"],
         features: [
-            "Data preprocessing and cleaning",
-            "Multiple ML algorithm implementation",
-            "Real-time prediction API",
-            "Interactive data visualization",
-            "Model performance evaluation",
-            "Automated feature selection",
-            "Export predictions to various formats",
-            "Web-based dashboard for monitoring"
+            "Dual control: Manual via transmitter and semi-autonomous modes",
+            "Real-time video feed using camera module",
+            "Sensor integration for environment-aware navigation",
+            "Data processing on SBC (Raspberry Pi 4)",
+            "Flight stabilization using Pixhawk and GPS module"
         ],
-        github: "https://github.com/alhasibarafat/predictive-analytics",
-        demo: "https://analytics-demo.alhasibarafat.com",
-        image: "https://via.placeholder.com/600x300/f59e0b/ffffff?text=ML+Analytics+System"
+        github: "https://github.com/Hasib-Arafat",
+        demo: "https://github.com/Hasib-Arafat",
+        image: "drone.jpg"
     }
 };
 
@@ -562,7 +557,7 @@ function openProjectModal(projectId) {
     if (project) {
         modalContent.innerHTML = `
             <div class="project-modal-header">
-                <img src="${project.image}" alt="${project.title}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                <img src="${project.image}" alt="${project.title}" style="width: 100%; height: 350px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
                 <h2 style="color: var(--primary-color); margin-bottom: 1rem;">${project.title}</h2>
                 <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">${project.description}</p>
             </div>
